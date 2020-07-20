@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200720 15:23:03.043" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/veronica/PycharmProjects/TrustedShops/Tests/VerifyImage.robot" id="s1" name="VerifyImage">
+<kw type="setup" name="Open test page" library="BaseKeywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${web_url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200720 15:23:03.603" level="INFO">Opening browser 'chrome' to base url 'https://qa.trustedshops.com/buyerrating/info_X1C77CF6EE730D2E88A284D7203D1B20F.html'.</msg>
+<status status="PASS" endtime="20200720 15:23:09.894" starttime="20200720 15:23:03.603"></status>
+</kw>
+<status status="PASS" endtime="20200720 15:23:09.895" starttime="20200720 15:23:03.601"></status>
+</kw>
+<test id="s1-t1" name="Verify image appears">
+<kw name="When user navigates to image" library="BaseKeywords">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${image_locator}</arg>
+</arguments>
+<status status="PASS" endtime="20200720 15:23:10.261" starttime="20200720 15:23:09.898"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${image_locator}</arg>
+</arguments>
+<status status="PASS" endtime="20200720 15:23:10.309" starttime="20200720 15:23:10.261"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${image_locator}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20200720 15:23:10.323" starttime="20200720 15:23:10.309"></status>
+</kw>
+<status status="PASS" endtime="20200720 15:23:10.323" starttime="20200720 15:23:09.897"></status>
+</kw>
+<kw name="Then user clicks on image" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${image_locator}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20200720 15:23:10.340" starttime="20200720 15:23:10.324"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${play_locator}</arg>
+</arguments>
+<msg timestamp="20200720 15:23:10.341" level="INFO">Clicking element '//span[@class='play']'.</msg>
+<status status="PASS" endtime="20200720 15:23:10.512" starttime="20200720 15:23:10.341"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${play_video}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200720 15:23:16.312" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-60.png"&gt;&lt;img src="selenium-screenshot-60.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20200720 15:23:16.312" starttime="20200720 15:23:15.559"></status>
+</kw>
+<msg timestamp="20200720 15:23:16.317" level="FAIL">Element '//div[@id='player']' did not appear in 5 seconds.</msg>
+<status status="FAIL" endtime="20200720 15:23:16.317" starttime="20200720 15:23:10.513"></status>
+</kw>
+<status status="FAIL" endtime="20200720 15:23:16.319" starttime="20200720 15:23:10.324"></status>
+</kw>
+<status status="FAIL" endtime="20200720 15:23:16.319" critical="yes" starttime="20200720 15:23:09.895">Element '//div[@id='player']' did not appear in 5 seconds.</status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200720 15:23:16.671" starttime="20200720 15:23:16.322"></status>
+</kw>
+<status status="FAIL" endtime="20200720 15:23:16.671" starttime="20200720 15:23:03.046"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="VerifyImage" pass="0">VerifyImage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
