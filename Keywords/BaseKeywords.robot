@@ -23,7 +23,6 @@ search icon is displayed
     Wait Until Page Contains Element   ${search_icon_locator}  15s
 
 
-*** keywords ***
 
 user clicks on search button
     Scroll Element into View    ${search_icon_locator}
@@ -38,26 +37,25 @@ list of shopping cites categories is displayed
     Wait Until Element is Visible       ${shops_category}
     Page should not contain             ${no_results_message}
 
-Get Shops List
-    @{displayed_shops_list} =   Create list
-    ${list_count} = Get Element Count
+##Get Shops List
+#    @{displayed_shops_list} =   Create list
+#    ${list_count} = Get Element Count
 
 
 
-displayed shopping cites are sorted in alphabetical order
+#displayed shopping cites are sorted in alphabetical order
 
 
+user searches for shop name
+    Input text  ${search_input_field_locator}  21run
+    Click element  ${search_button_locator}
 
 
-user searches for ${product_name}
-    Scroll Element into view  ${search_input_field_locator}
-    Wait until page contains   ${search_input_field_locator}
-    Input text  ${search_input_field_locator}   ${product_name}
-    Click Element  ${search_button_locator}
+name of the shop is displayed
+    Wait until element is visible  ${shop_details}
+    Page should not contain  ${no_results_message}
 
 
-
-*** Keywords ***
 user navigates to image
     Scroll element into view  ${image_locator}
     Get Text  ${image_locator}
@@ -65,13 +63,18 @@ user navigates to image
 
 
 
-user clicks on image
+user checks Video
     Wait until page contains element  ${image_locator}  15s
     #Wait until keyword succeeds  20s
-    Click element   ${play_locator}
-    Wait until page contains element  ${play_video}
-    Get Element  ${play_video}
     Click element   ${play_button}
+    #Wait until page contains element  ${play_video}
+    #Get Element  ${play_video}
+
+
+
+user can exit video
+    Wait until page contains element  ${close_button}
+    Click Element  ${close_button}
 
 #video plays
 #    Get Element  ${play_locator}

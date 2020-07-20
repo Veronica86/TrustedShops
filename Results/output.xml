@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20200720 15:23:03.043" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
-<suite source="/Users/veronica/PycharmProjects/TrustedShops/Tests/VerifyImage.robot" id="s1" name="VerifyImage">
+<robot rpa="false" generated="20200721 00:22:45.002" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/veronica/PycharmProjects/TrustedShops/Tests" id="s1" name="Tests">
+<suite source="/Users/veronica/PycharmProjects/TrustedShops/Tests/TrustedShops.robot" id="s1-s1" name="TrustedShops">
 <kw type="setup" name="Open test page" library="BaseKeywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -8,26 +9,65 @@
 <arg>${web_url}</arg>
 <arg>${browser}</arg>
 </arguments>
-<msg timestamp="20200720 15:23:03.603" level="INFO">Opening browser 'chrome' to base url 'https://qa.trustedshops.com/buyerrating/info_X1C77CF6EE730D2E88A284D7203D1B20F.html'.</msg>
-<status status="PASS" endtime="20200720 15:23:09.894" starttime="20200720 15:23:03.603"></status>
+<msg timestamp="20200721 00:22:45.898" level="INFO">Opening browser 'chrome' to base url 'https://qa.trustedshops.com/buyerrating/info_X1C77CF6EE730D2E88A284D7203D1B20F.html'.</msg>
+<status status="PASS" endtime="20200721 00:22:58.010" starttime="20200721 00:22:45.896"></status>
 </kw>
-<status status="PASS" endtime="20200720 15:23:09.895" starttime="20200720 15:23:03.601"></status>
+<status status="PASS" endtime="20200721 00:22:58.010" starttime="20200721 00:22:45.896"></status>
 </kw>
-<test id="s1-t1" name="Verify image appears">
+<test id="s1-s1-t1" name="Verify if user can see page logo,search and login icon">
+<kw name="Then page logo is displayed" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${page_logo}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:22:58.130" starttime="20200721 00:22:58.015"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:22:58.131" starttime="20200721 00:22:58.014"></status>
+</kw>
+<kw name="And login button is displayed" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${login_locator}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:22:58.175" starttime="20200721 00:22:58.134"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:22:58.176" starttime="20200721 00:22:58.133"></status>
+</kw>
+<kw name="And search icon is displayed" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${search_icon_locator}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:22:58.227" starttime="20200721 00:22:58.177"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:22:58.227" starttime="20200721 00:22:58.176"></status>
+</kw>
+<tags>
+<tag>Icons</tag>
+</tags>
+<status status="PASS" endtime="20200721 00:22:58.227" critical="yes" starttime="20200721 00:22:58.011"></status>
+</test>
+<test id="s1-s1-t2" name="Verify image appears">
 <kw name="When user navigates to image" library="BaseKeywords">
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <doc>Scrolls an element identified by ``locator`` into view.</doc>
 <arguments>
 <arg>${image_locator}</arg>
 </arguments>
-<status status="PASS" endtime="20200720 15:23:10.261" starttime="20200720 15:23:09.898"></status>
+<status status="PASS" endtime="20200721 00:22:58.624" starttime="20200721 00:22:58.233"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of element identified by ``locator``.</doc>
 <arguments>
 <arg>${image_locator}</arg>
 </arguments>
-<status status="PASS" endtime="20200720 15:23:10.309" starttime="20200720 15:23:10.261"></status>
+<status status="PASS" endtime="20200721 00:22:58.674" starttime="20200721 00:22:58.625"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` appears on current page.</doc>
@@ -35,59 +75,179 @@
 <arg>${image_locator}</arg>
 <arg>15s</arg>
 </arguments>
-<status status="PASS" endtime="20200720 15:23:10.323" starttime="20200720 15:23:10.309"></status>
+<status status="PASS" endtime="20200721 00:22:58.686" starttime="20200721 00:22:58.675"></status>
 </kw>
-<status status="PASS" endtime="20200720 15:23:10.323" starttime="20200720 15:23:09.897"></status>
+<status status="PASS" endtime="20200721 00:22:58.686" starttime="20200721 00:22:58.233"></status>
 </kw>
-<kw name="Then user clicks on image" library="BaseKeywords">
+<kw name="Then user checks video" library="BaseKeywords">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${image_locator}</arg>
 <arg>15s</arg>
 </arguments>
-<status status="PASS" endtime="20200720 15:23:10.340" starttime="20200720 15:23:10.324"></status>
+<status status="PASS" endtime="20200721 00:22:58.701" starttime="20200721 00:22:58.687"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${play_locator}</arg>
+<arg>${play_button}</arg>
 </arguments>
-<msg timestamp="20200720 15:23:10.341" level="INFO">Clicking element '//span[@class='play']'.</msg>
-<status status="PASS" endtime="20200720 15:23:10.512" starttime="20200720 15:23:10.341"></status>
+<msg timestamp="20200721 00:22:58.702" level="INFO">Clicking element '//span[@class='play']'.</msg>
+<status status="PASS" endtime="20200721 00:22:58.900" starttime="20200721 00:22:58.702"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:22:58.901" starttime="20200721 00:22:58.687"></status>
+</kw>
+<kw name="And user can exit video" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${close_button}</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:22:59.251" starttime="20200721 00:22:58.904"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${close_button}</arg>
+</arguments>
+<msg timestamp="20200721 00:22:59.252" level="INFO">Clicking element '//a[@title='Close']'.</msg>
+<status status="PASS" endtime="20200721 00:22:59.508" starttime="20200721 00:22:59.252"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:22:59.508" starttime="20200721 00:22:58.902"></status>
+</kw>
+<tags>
+<tag>video</tag>
+</tags>
+<status status="PASS" endtime="20200721 00:22:59.508" critical="yes" starttime="20200721 00:22:58.230"></status>
+</test>
+<test id="s1-s1-t3" name="Verify if user can click search button">
+<kw name="When user clicks on search button" library="BaseKeywords">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${search_icon_locator}</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:22:59.885" starttime="20200721 00:22:59.534"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
-<arg>${play_video}</arg>
+<arg>${search_icon_locator}</arg>
+<arg>15s</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20200720 15:23:16.312" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-60.png"&gt;&lt;img src="selenium-screenshot-60.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20200720 15:23:16.312" starttime="20200720 15:23:15.559"></status>
+<status status="PASS" endtime="20200721 00:22:59.917" starttime="20200721 00:22:59.885"></status>
 </kw>
-<msg timestamp="20200720 15:23:16.317" level="FAIL">Element '//div[@id='player']' did not appear in 5 seconds.</msg>
-<status status="FAIL" endtime="20200720 15:23:16.317" starttime="20200720 15:23:10.513"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon_locator}</arg>
+</arguments>
+<msg timestamp="20200721 00:22:59.918" level="INFO">Clicking element '//span[@class='icon']'.</msg>
+<status status="PASS" endtime="20200721 00:23:03.941" starttime="20200721 00:22:59.918"></status>
 </kw>
-<status status="FAIL" endtime="20200720 15:23:16.319" starttime="20200720 15:23:10.324"></status>
+<status status="PASS" endtime="20200721 00:23:03.941" starttime="20200721 00:22:59.533"></status>
 </kw>
-<status status="FAIL" endtime="20200720 15:23:16.319" critical="yes" starttime="20200720 15:23:09.895">Element '//div[@id='player']' did not appear in 5 seconds.</status>
+<kw name="Then user is redirected to shops page" library="BaseKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${shops_locator}</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:23:04.042" starttime="20200721 00:23:03.942"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:23:04.042" starttime="20200721 00:23:03.942"></status>
+</kw>
+<kw name="And list of shopping cites categories is displayed" library="BaseKeywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${shops_category}</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:23:04.127" starttime="20200721 00:23:04.043"></status>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<doc>Verifies the current page does not contain ``text``.</doc>
+<arguments>
+<arg>${no_results_message}</arg>
+</arguments>
+<msg timestamp="20200721 00:23:04.189" level="INFO">Current page does not contain text 'No results were found for your search'.</msg>
+<status status="PASS" endtime="20200721 00:23:04.189" starttime="20200721 00:23:04.127"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:23:04.190" starttime="20200721 00:23:04.043"></status>
+</kw>
+<tags>
+<tag>Search</tag>
+</tags>
+<status status="PASS" endtime="20200721 00:23:04.190" critical="yes" starttime="20200721 00:22:59.529"></status>
+</test>
+<test id="s1-s1-t4" name="Verify if user can search for Shop Names">
+<kw name="When user searches for shop name" library="BaseKeywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_input_field_locator}</arg>
+<arg>21run</arg>
+</arguments>
+<msg timestamp="20200721 00:23:04.196" level="INFO">Typing text '21run' into text field '//div/input'.</msg>
+<status status="PASS" endtime="20200721 00:23:04.776" starttime="20200721 00:23:04.196"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_button_locator}</arg>
+</arguments>
+<msg timestamp="20200721 00:23:04.777" level="INFO">Clicking element '//span[text()='Suche']'.</msg>
+<status status="PASS" endtime="20200721 00:23:05.388" starttime="20200721 00:23:04.776"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:23:05.388" starttime="20200721 00:23:04.195"></status>
+</kw>
+<kw name="Then name of the shop is displayed" library="BaseKeywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${shop_details}</arg>
+</arguments>
+<status status="PASS" endtime="20200721 00:23:05.988" starttime="20200721 00:23:05.389"></status>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<doc>Verifies the current page does not contain ``text``.</doc>
+<arguments>
+<arg>${no_results_message}</arg>
+</arguments>
+<msg timestamp="20200721 00:23:06.049" level="INFO">Current page does not contain text 'No results were found for your search'.</msg>
+<status status="PASS" endtime="20200721 00:23:06.049" starttime="20200721 00:23:05.988"></status>
+</kw>
+<status status="PASS" endtime="20200721 00:23:06.050" starttime="20200721 00:23:05.389"></status>
+</kw>
+<tags>
+<tag>Search Bar</tag>
+</tags>
+<status status="PASS" endtime="20200721 00:23:06.050" critical="yes" starttime="20200721 00:23:04.193"></status>
 </test>
 <kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20200720 15:23:16.671" starttime="20200720 15:23:16.322"></status>
+<status status="PASS" endtime="20200721 00:23:06.428" starttime="20200721 00:23:06.053"></status>
 </kw>
-<status status="FAIL" endtime="20200720 15:23:16.671" starttime="20200720 15:23:03.046"></status>
+<doc>This is an End to End Test</doc>
+<status status="PASS" endtime="20200721 00:23:06.428" starttime="20200721 00:22:45.074"></status>
+</suite>
+<status status="PASS" endtime="20200721 00:23:06.444" starttime="20200721 00:22:45.007"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">Icons</stat>
+<stat fail="0" pass="1">Search</stat>
+<stat fail="0" pass="1">Search Bar</stat>
+<stat fail="0" pass="1">video</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="VerifyImage" pass="0">VerifyImage</stat>
+<stat fail="0" id="s1" name="Tests" pass="4">Tests</stat>
+<stat fail="0" id="s1-s1" name="TrustedShops" pass="4">Tests.TrustedShops</stat>
 </suite>
 </statistics>
 <errors>
