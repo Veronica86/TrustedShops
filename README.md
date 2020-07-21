@@ -44,7 +44,7 @@ pip uninstall robotframework
 ### End to End Test
 
   * Robot Framework allows different styles of creating more readable scripts. 
-  * Gherkin uses a set of special keywords to give structure and meaning to executable specifications. 
+  * For this test case we use Gherkin syntax to create a more readable script. Gherkin uses a set of special keywords to give structure and meaning to executable specifications. 
    
 ![](image.png)
 
@@ -52,3 +52,9 @@ The Given and Ands in our test case are the preconditions that setup the test ca
 We can place our cursor in any keyword and click on *CTRL + B* and it will take us to the Resource file that holds that keyword where we call methods on page objects.
 
   * example: When a user checks video, we are going to wait until page contains the video then user can click on play to play video.
+  
+  
+This is also demonstrated in the Test Results where we see the style the test case. Expanding any of the keywords gives more details and we can see that the files are using Selenium Library keywords. 
+  
+  
+![](image2.png)
